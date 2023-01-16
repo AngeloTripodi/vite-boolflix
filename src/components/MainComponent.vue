@@ -8,7 +8,32 @@ export default {
         }
     },
     methods: {
+        flags(movieLanguage) {
+            if (movieLanguage == 'it') {
+                movieLanguage = `${movieLanguage}.png`;
+                return movieLanguage;
+            }
+            else if ((movieLanguage == 'en')) {
+                movieLanguage = `${movieLanguage}.png`;
+                return movieLanguage;
+            }
+            else if ((movieLanguage == 'de')) {
+                movieLanguage = `${movieLanguage}.png`;
+                return movieLanguage;
+            }
+            else if ((movieLanguage == 'es')) {
+                movieLanguage = `${movieLanguage}.png`;
+                return movieLanguage;
+            }
+            else if ((movieLanguage == 'ja')) {
+                movieLanguage = `${movieLanguage}.png`;
+                return movieLanguage;
+            }
+            else {
+                return 'No flag for ' + movieLanguage + ' :(';
+            }
 
+        }
     },
 
 }
@@ -18,8 +43,8 @@ export default {
     <main>
         <h1>Main</h1>
         <div v-for="movie in store.movieList ">
-            {{ movie.title }} / {{ movie.original_title }} / -- <img :src="store.flags(movie.original_language)"
-                :alt="store.flags(movie.original_language)">
+            {{ movie.title }} / {{ movie.original_title }} / -- <img :src="flags(movie.original_language)"
+                :alt="flags(movie.original_language)">
             -- {{ movie.vote_average }}
         </div>
 
