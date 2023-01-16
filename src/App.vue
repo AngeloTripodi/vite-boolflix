@@ -56,11 +56,25 @@ export default {
         })
     },
 
+    getTop() {
+      axios.get('https://api.themoviedb.org/3/movie/top_rated?api_key=80ff357ace3460656dde7da26874f7bd&page=1', {
+        params: {
+        }
+      })
+        .then((response) => {
+          console.log(response.data.results);
+          this.store.moviesList = response.data.results;
+        })
+        .catch(function (error) {
+          console.log(error);
+        })
+    }
   },
 
 
-  created() {
 
+  created() {
+    this.getTop()
   },
 
   components: {
