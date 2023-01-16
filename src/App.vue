@@ -17,13 +17,13 @@ export default {
     searchContent(searchText) {
       this.searchMovie(searchText);
       this.searchTvShows(searchText);
-      this.getlist()
+      // this.getlist()
     },
 
-    getlist() {
-      store.contentList = store.moviesList.concat(store.showsList);
-      console.log(store.contentList)
-    },
+    // getlist() {
+    //   store.contentList = store.moviesList.concat(store.showsList);
+    //   console.log(store.contentList)
+    // },
 
     searchMovie(movieName) {
       axios.get('https://api.themoviedb.org/3/search/movie?api_key=80ff357ace3460656dde7da26874f7bd', {

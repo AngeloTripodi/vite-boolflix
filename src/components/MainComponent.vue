@@ -42,10 +42,16 @@ export default {
 <template>
     <main>
         <h1>Main</h1>
-        <div v-for="movie in store.contentList ">
+        <div v-for="movie in store.moviesList ">
             {{ movie.title }} {{ movie.name }}/ {{ movie.original_title }} {{ movie.original_name }}/ -- <img
                 :src="flags(movie.original_language)" :alt="flags(movie.original_language)">
             -- {{ movie.vote_average }}
+        </div>
+
+        <div v-for="show in store.showsList "> PORCO
+            {{ show.name }} / {{ show.original_name }} / <img :src="flags(show.original_language)"
+                :alt="flags(show.original_language)">
+            -- {{ show.vote_average }}
         </div>
 
 
