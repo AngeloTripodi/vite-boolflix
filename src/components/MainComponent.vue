@@ -37,8 +37,9 @@ export default {
         },
 
         integerVote(number) {
-            console.log(Math.ceil(number));
-            return Math.ceil(number)
+            let intNum = number / 2;
+            let roundNum = Math.ceil(intNum);
+            return roundNum;
 
         }
     },
@@ -80,7 +81,7 @@ export default {
                 <img :src="flags(show.original_language)" :alt="flags(show.original_language)">
             </div>
             <div>
-                <p> {{ show.vote_average }}</p>
+                <p> {{ integerVote(show.vote_average) }}</p>
             </div>
 
 
