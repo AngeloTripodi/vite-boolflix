@@ -17,9 +17,12 @@ export default {
 <template>
     <main>
         <h1>Main</h1>
-        <div v-for="movie in store.movieList ">{{ movie.title }} / {{ movie.original_title }} / {{
-            movie.original_language
-        }} -- {{ movie.vote_average }}</div>
+        <div v-for="movie in store.movieList ">
+            {{ movie.title }} / {{ movie.original_title }} / -- <img :src="store.flags(movie.original_language)"
+                :alt="store.flags(movie.original_language)">
+            -- {{ movie.vote_average }}
+        </div>
+
     </main>
 </template>
 

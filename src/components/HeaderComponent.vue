@@ -28,6 +28,7 @@ export default {
                         @keyup.enter="$emit('searchFilter', store.searchedText)">
                     <button @click="$emit('searchFilter', store.searchedText)">Cerca</button>
 
+
                 </div>
             </div>
         </div>
