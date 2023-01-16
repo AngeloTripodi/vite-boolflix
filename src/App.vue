@@ -11,10 +11,10 @@ export default {
     };
   },
   methods: {
-    searchMovie() {
+    searchMovie(movieName) {
       axios.get('https://api.themoviedb.org/3/search/movie?api_key=80ff357ace3460656dde7da26874f7bd', {
         params: {
-          query: '007'
+          query: movieName,
         }
       })
         .then((response) => {
@@ -29,7 +29,7 @@ export default {
   },
 
   created() {
-    this.searchMovie();
+    this.searchMovie('fantozzi');
   },
   components: {
     HeaderComponent,
@@ -40,7 +40,7 @@ export default {
 </script>
 
 <template>
-  <HeaderComponent />
+  <HeaderComponent @searchFilter="searchMovie" />
   <MainComponent />
 
 
@@ -48,5 +48,6 @@ export default {
 
 <style lang="scss">
 @use './styles/general.scss' as *;
+@use './styles/partials/variables' as *;
 @use 'bootstrap/scss/bootstrap.scss' as *;
 </style>
