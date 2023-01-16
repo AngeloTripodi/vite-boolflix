@@ -8,9 +8,23 @@ export default {
   data() {
     return {
       store,
+      newList: '',
     };
   },
+
   methods: {
+
+    searchContent(searchText) {
+      this.searchMovie(searchText);
+      this.searchTvShows(searchText);
+      this.getlist()
+    },
+
+    getlist() {
+      store.contentList = store.moviesList.concat(store.showsList);
+      console.log(store.contentList)
+    },
+
     searchMovie(movieName) {
       axios.get('https://api.themoviedb.org/3/search/movie?api_key=80ff357ace3460656dde7da26874f7bd', {
         params: {
@@ -19,7 +33,23 @@ export default {
       })
         .then((response) => {
           console.log(response.data.results);
-          this.store.movieList = response.data.results;
+          this.store.moviesList = response.data.results;
+        })
+        .catch(function (error) {
+          console.log(error);
+        })
+    },
+
+
+    searchTvShows(showName) {
+      axios.get('https://api.themoviedb.org/3/search/tv?api_key=80ff357ace3460656dde7da26874f7bd', {
+        params: {
+          query: showName,
+        }
+      })
+        .then((response) => {
+          console.log(response.data.results);
+          this.store.showsList = response.data.results;
         })
         .catch(function (error) {
           console.log(error);
@@ -28,9 +58,11 @@ export default {
 
   },
 
+
   created() {
-    this.searchMovie('fantozzi');
+
   },
+
   components: {
     HeaderComponent,
     MainComponent
@@ -40,7 +72,7 @@ export default {
 </script>
 
 <template>
-  <HeaderComponent @searchFilter="searchMovie" />
+  <HeaderComponent @searchFilter="searchContent" />
   <MainComponent />
 
 
