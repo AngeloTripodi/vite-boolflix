@@ -77,7 +77,6 @@ export default {
     left: 40px;
     right: 40px;
 
-
 }
 
 .my_card:hover .cardContentHover {
