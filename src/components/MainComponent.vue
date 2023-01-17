@@ -41,6 +41,7 @@ export default {
             let roundNum = Math.ceil(intNum);
             return roundNum;
 
+
         }
     },
 
@@ -62,8 +63,7 @@ export default {
                 <img :src="flags(movie.original_language)" :alt="flags(movie.original_language)">
             </div>
             <div>
-                <p> {{ integerVote(movie.vote_average) }}</p>
-                <font-awesome-icon icon="fa-solid fa-star" />
+                <font-awesome-icon icon="fa-solid fa-star" v-for=" icon in integerVote(movie.vote_average)" />
             </div>
 
 
