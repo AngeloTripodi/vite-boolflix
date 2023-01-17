@@ -63,6 +63,7 @@ export default {
             </div>
             <div>
                 <p> {{ integerVote(movie.vote_average) }}</p>
+                <font-awesome-icon icon="fa-solid fa-star" />
             </div>
 
 
