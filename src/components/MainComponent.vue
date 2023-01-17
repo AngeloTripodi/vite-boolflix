@@ -36,7 +36,7 @@ export default {
 
         },
 
-        integerVote(number) {
+        voteToStar(number) {
             let intNum = number / 2;
             let roundNum = Math.ceil(intNum);
             return roundNum;
@@ -53,7 +53,7 @@ export default {
         <div v-for="movie in store.moviesList ">
 
             <div>
-                <img :src="`https://image.tmdb.org/t/p/${imgSize}${movie.poster_path}`" alt="">
+                <img :src="`https://image.tmdb.org/t/p/${imgSize}${movie.poster_path}`" alt="Poster Image">
             </div>
             <div>
                 <h2> {{ movie.title }}</h2>
@@ -63,7 +63,7 @@ export default {
                 <img :src="flags(movie.original_language)" :alt="flags(movie.original_language)">
             </div>
             <div>
-                <font-awesome-icon icon="fa-solid fa-star" v-for=" icon in integerVote(movie.vote_average)" />
+                <font-awesome-icon icon="fa-solid fa-star" v-for=" icon in voteToStar(movie.vote_average)" />
             </div>
 
 
@@ -72,7 +72,7 @@ export default {
         <div v-for="show in store.showsList ">
 
             <div>
-                <img :src="`https://image.tmdb.org/t/p/${imgSize}${show.poster_path}`" alt="">
+                <img :src="`https://image.tmdb.org/t/p/${imgSize}${show.poster_path}`" alt="Poster Image">
             </div>
             <div>
                 <h2>{{ show.name }}</h2>
@@ -82,7 +82,7 @@ export default {
                 <img :src="flags(show.original_language)" :alt="flags(show.original_language)">
             </div>
             <div>
-                <p> {{ integerVote(show.vote_average) }}</p>
+                <font-awesome-icon icon="fa-solid fa-star" v-for=" icon in voteToStar(show.vote_average)" />
             </div>
 
 
