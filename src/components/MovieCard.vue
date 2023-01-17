@@ -31,7 +31,8 @@ export default {
 <template>
     <div class="col-auto my_card py-3">
         <div class="contentCard">
-            <img :src="`https://image.tmdb.org/t/p/${imgSize}${singleMovieCard.poster_path}`" alt="Poster Image">
+            <img class="noBg" :src="`https://image.tmdb.org/t/p/${imgSize}${singleMovieCard.poster_path}`"
+                alt="Poster Image">
             <div class="cardContentHover">
 
                 <div>
@@ -67,7 +68,14 @@ export default {
     overflow: hidden;
 }
 
-.my_card:hover {}
+.my_card:hover .noBg {
+    opacity: 0;
+
+}
+
+.my_card:hover {
+    background-color: black;
+}
 
 .cardContentHover {
     display: none;
