@@ -29,27 +29,63 @@ export default {
 </script>
 
 <template>
-    <div class="col-auto my_card">
-        <div>
+    <div class="col-auto my_card py-3">
+        <div class="contentCard">
             <img :src="`https://image.tmdb.org/t/p/${imgSize}${singleMovieCard.poster_path}`" alt="Poster Image">
+            <div class="cardContentHover">
+
+                <div>
+                    <h2> {{ singleMovieCard.title }}</h2>
+                    <p>
+                        {{ singleMovieCard.original_title }} |
+                        <img v-if="flagsList.includes(singleMovieCard.original_language)"
+                            :src="'../public/' + singleMovieCard.original_language + '.png'"
+                            :alt="singleMovieCard.original_language + ' icon'">
+                        <span v-else> {{ 'Language: ' + singleMovieCard.original_language }} </span>
+                    </p>
+                </div>
+
+                <div>
+                    <font-awesome-icon icon="fa-solid fa-star" v-for="icon in 5"
+                        :class="icon <= (voteToStar(singleMovieCard.vote_average)) ? 'gold' : 'grey'" />
+                </div>
+                <div class="mTop10">
+                    <p>{{ singleMovieCard.overview }}</p>
+
+                </div>
+
+            </div>
         </div>
-        <div>
-            <h2> {{ singleMovieCard.title }}</h2>
-            <p>{{ singleMovieCard.original_title }}</p>
-        </div>
-        <div>
-            <img v-if="flagsList.includes(singleMovieCard.original_language)"
-                :src="'../public/' + singleMovieCard.original_language + '.png'"
-                :alt="singleMovieCard.original_language + ' icon'">
-            <span v-else> {{ 'Language: ' + singleMovieCard.original_language }} </span>
-        </div>
-        <div>
-            <font-awesome-icon icon="fa-solid fa-star" v-for="icon in 5"
-                :class="icon <= (voteToStar(singleMovieCard.vote_average)) ? 'gold' : 'grey'" />
-        </div>
+
+
     </div>
 </template>
 
 <style lang="scss" scoped>
+.my_card {
+    position: relative;
+    overflow: hidden;
+}
 
+.my_card:hover {}
+
+.cardContentHover {
+    display: none;
+    position: absolute;
+    top: 35px;
+    bottom: 10px;
+    left: 40px;
+    right: 40px;
+
+
+}
+
+.my_card:hover .cardContentHover {
+    display: block;
+
+}
+
+.mTop10 {
+    margin-top: 10px;
+}
 </style>
