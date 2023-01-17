@@ -63,7 +63,8 @@ export default {
                 <img :src="flags(movie.original_language)" :alt="flags(movie.original_language)">
             </div>
             <div>
-                <font-awesome-icon icon="fa-solid fa-star" v-for=" icon in voteToStar(movie.vote_average)" />
+                <font-awesome-icon icon="fa-solid fa-star" v-for="icon in 5"
+                    :class="icon <= (voteToStar(movie.vote_average)) ? 'gold' : 'grey'" />
             </div>
 
 
@@ -82,11 +83,13 @@ export default {
                 <img :src="flags(show.original_language)" :alt="flags(show.original_language)">
             </div>
             <div>
-                <font-awesome-icon icon="fa-solid fa-star" v-for=" icon in voteToStar(show.vote_average)" />
+                <font-awesome-icon icon="fa-solid fa-star" v-for="icon in 5"
+                    :class="icon <= (voteToStar(show.vote_average)) ? 'gold' : 'grey'" />
             </div>
-
-
         </div>
+
+
+
 
 
 
@@ -94,5 +97,11 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+.gold {
+    color: yellow;
+}
 
+.grey {
+    color: lightgrey;
+}
 </style>
