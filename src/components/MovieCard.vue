@@ -57,42 +57,9 @@ export default {
 
             </div>
         </div>
-
-
     </div>
 </template>
 
 <style lang="scss" scoped>
-.my_card {
-    position: relative;
-    overflow: hidden;
-}
 
-.my_card:hover .noBg {
-    opacity: 0;
-
-}
-
-.my_card:hover {
-    background-color: black;
-}
-
-.cardContentHover {
-    display: none;
-    position: absolute;
-    top: 35px;
-    bottom: 10px;
-    left: 40px;
-    right: 40px;
-
-}
-
-.my_card:hover .cardContentHover {
-    display: block;
-
-}
-
-.mTop10 {
-    margin-top: 10px;
-}
 </style>

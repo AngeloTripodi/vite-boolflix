@@ -18,6 +18,44 @@ body {
     color: lightgrey;
 }
 
+
+
+//! Card stile @MovieCard.Vue, TvshowCard.vue
+
 .my_card {
     text-align: left;
+    position: relative;
+
+}
+
+.my_card:hover .noBg {
+    opacity: 0;
+
+}
+
+.my_card:hover .contentCard {
+    background-color: black;
+
+}
+
+.cardContentHover {
+    display: none;
+    position: absolute;
+    top: 35px;
+    bottom: 10px;
+    left: 40px;
+    right: 40px;
+
+}
+
+.my_card:hover .cardContentHover {
+    display: block;
+
+}
+
+.mTop10 {
+    margin-top: 10px;
+    overflow-y: scroll;
+    width: 100%;
+    max-height: 60%;
 }
