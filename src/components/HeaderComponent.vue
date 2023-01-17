@@ -14,18 +14,15 @@ export default {
 </script>
 
 <template>
-    <header>
-        <div class="container">
-            <div class="row">
-                <div class=" col-6">
-                    <h1>Netflix</h1>
+    <header class=" bg-black">
+        <div class="container-fluid px-3 py-2">
+            <div class="row align-items-center">
+                <div class="logoSection col-6">
+                    <h1>BOOLFLIX</h1>
                 </div>
-                <div class="col-6">
-                    <label for="searchbar">
-                        Cerca il Film / Serie Tv:
-                    </label>
-                    <input type="text" id="searchbar" v-model="store.searchedText"
-                        @keyup.enter="$emit('searchFilter', store.searchedText)">
+                <div class="searchSection col-6 justify-content-end d-flex">
+                    <input type="text" id="searchbar" placeholder="Cerca il Film / Serie Tv:"
+                        v-model="store.searchedText" @keyup.enter="$emit('searchFilter', store.searchedText)">
                     <button @click="$emit('searchFilter', store.searchedText)">Cerca</button>
 
 
@@ -36,7 +33,26 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-input {
-    margin-left: 1rem;
+.logoSection h1 {
+    color: red;
+    margin-bottom: 0px;
+}
+
+.searchSection input {
+    margin: 0 1rem;
+    padding: 0 1rem;
+    background-color: white;
+    border-radius: 10px;
+    border: none;
+}
+
+button {
+    background-color: white;
+    border-radius: 10px;
+    border: none;
+    padding: 0 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+
 }
 </style>

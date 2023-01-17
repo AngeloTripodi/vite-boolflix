@@ -35,7 +35,6 @@ export default {
                 <p>{{ movie.original_title }}</p>
             </div>
             <div>
-                <!-- <img :src="flags(movie.original_language)" :alt="flags(movie.original_language)"> -->
                 <img v-if="flagsList.includes(movie.original_language)"
                     :src="'../public/' + movie.original_language + '.png'" :alt="movie.original_language + ' icon'">
                 <span v-else> {{ 'Language: ' + movie.original_language }} </span>
