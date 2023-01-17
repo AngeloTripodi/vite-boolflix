@@ -19,7 +19,7 @@ export default {
 
 <template>
     <main>
-        <div class="container">
+        <div class="container-fluid px-5 py-4">
             <div class="row">
                 <CreateMoviesList />
                 <CreateTvshowsList />
@@ -29,5 +29,7 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-
+main {
+    background-color: #1c1c1c;
+}
 </style>

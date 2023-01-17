@@ -12,7 +12,7 @@ export default {
     data() {
         return {
             store,
-            imgSize: 'w185',
+            imgSize: 'w342',
             flagsList: ['de', 'en', 'es', 'it', 'ja'],
         }
     },
@@ -29,7 +29,7 @@ export default {
 </script>
 
 <template>
-    <div class="col-12 col-sm-4 col-lg-3 my_card">
+    <div class="col-auto my_card">
         <div>
             <img :src="`https://image.tmdb.org/t/p/${imgSize}${singleTvshowCard.poster_path}`" alt="Poster Image">
         </div>
