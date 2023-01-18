@@ -33,7 +33,7 @@ export default {
         <div class="contentCard">
             <img class="noBg" v-if="singleTvshowCard.poster_path != null"
                 :src="`https://image.tmdb.org/t/p/${imgSize}${singleTvshowCard.poster_path}`" alt="Poster Image">
-            <img v-else src="../public/black.jpg" alt="unknow cover">
+            <img v-else :src="'../public/black.jpg'" alt="unknow cover">
             <div class="cardContentHover">
 
                 <div>
